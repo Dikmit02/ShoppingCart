@@ -3,10 +3,11 @@
 ######################
 Step1:Install packages by running npm install
 
-// to store some data before hand
+##############################
+Store some product beforehand
 Step 2: cd seed
 Step 3: node product-seeder
 
-
-// Get out from seed folder
+###############################
+Run project
 Step 4: node index.js
