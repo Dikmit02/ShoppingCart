@@ -2,7 +2,7 @@ const express = require('express')
 const path=require('path')
 const expressHbs = require('express-handlebars');
 require('./db/mongoose')
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+
 const routes=require('./routes/index')
 
 const app = express()
@@ -19,8 +19,7 @@ app.use(express.static(path.join(publicDirectoryPath)))
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
 
 app.set('view engine', 'hbs');
-// app.set('views', viewsPath)
-// hbs.registerPartials(partialPath)
+
 
 app.use('/',routes)
 
