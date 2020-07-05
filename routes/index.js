@@ -32,6 +32,24 @@ router.get('/add-to-cart/:id', function (req, res, next) {
   });
 });
 
+router.get('/reduce/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var ca = new Cart(cart.items);
+
+  cart.reduceByOne(productId);
+  
+  res.redirect('/shopping-cart');
+});
+
+router.get('/remove/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var ca = new Cart(cart.items);
+
+  cart.removeItem(productId);
+ 
+  res.redirect('/shopping-cart');
+});
+
 router.get('/shopping-cart', function (req, res, next) {
  
   var ca = new Cart(cart.items);
